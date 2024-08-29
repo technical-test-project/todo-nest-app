@@ -15,6 +15,10 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  async findOne(id: number) {
+    return this.usersRepository.findOne({ where: { id } });
+  }
+
   async validateUser({ username, password }: LoginAuthDto): Promise<any> {
     const user = await this.usersRepository.findOne({ where: { username } });
     if (user && (await bcryptjs.compare(password, user.password))) {
