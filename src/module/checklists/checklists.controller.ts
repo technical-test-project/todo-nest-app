@@ -31,10 +31,7 @@ export class ChecklistsController {
   ): Promise<Response> {
     const { id } = req.user as User;
 
-    const result = await this.checklistsService.create(
-      id,
-      createChecklistDto,
-    );
+    const result = await this.checklistsService.create(id, createChecklistDto);
     return res.status(HttpStatus.CREATED).json({
       message: 'Checklist created successfully',
       data: result,
