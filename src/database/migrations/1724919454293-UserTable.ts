@@ -14,6 +14,12 @@ export class UserTable1724919454293 implements MigrationInterface {
             generationStrategy: 'increment',
           },
           {
+            name: 'email',
+            type: 'varchar',
+            isNullable: false,
+            isUnique: true,
+          },
+          {
             name: 'username',
             type: 'varchar',
             isNullable: false,
@@ -25,12 +31,12 @@ export class UserTable1724919454293 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: 'createdAt',
+            name: 'created_at',
             type: 'timestamp',
             default: 'CURRENT_TIMESTAMP',
           },
           {
-            name: 'updatedAt',
+            name: 'updated_at',
             type: 'timestamp',
             default: 'CURRENT_TIMESTAMP',
             onUpdate: 'CURRENT_TIMESTAMP',

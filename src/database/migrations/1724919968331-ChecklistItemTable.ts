@@ -30,12 +30,12 @@ export class ChecklistItemTable1724919968331 implements MigrationInterface {
             isUnique: true,
           },
           {
-            name: 'createdAt',
+            name: 'created_at',
             type: 'timestamp',
             default: 'CURRENT_TIMESTAMP',
           },
           {
-            name: 'updatedAt',
+            name: 'updated_at',
             type: 'timestamp',
             default: 'CURRENT_TIMESTAMP',
             onUpdate: 'CURRENT_TIMESTAMP',
@@ -48,6 +48,7 @@ export class ChecklistItemTable1724919968331 implements MigrationInterface {
     await queryRunner.createForeignKey(
       'checklist_items',
       new TableForeignKey({
+        name: 'checklist_items_checklist_id_fk',
         columnNames: ['checklist_id'], // Column that will hold the foreign key
         referencedColumnNames: ['id'], // Column in the referenced table
         referencedTableName: 'checklists', // Referenced table
