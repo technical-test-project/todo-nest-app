@@ -22,9 +22,50 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Overview
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is a Node.js application using [NestJS](https://github.com/nestjs/nest) with TypeScript. The application integrates with TypeORM for database management and uses MySQL for database.
+The setup supports hot reloading with `ts-node` for a smooth development experience.
+
+## API Endpoint
+
+
+| Method | url                      | Description            |
+|--------|--------------------------|------------------------|
+| POST   | /login                   | Request Token          |
+| POST   | /register                | Register               |
+| GET    | /checklist               | Get All Checklist      |
+| POST   | /checklist               | Create new checklist   |
+| DELETE | /checklist/{checklistId} | Delete checklist by ID |
+
+
+
+## Prerequisites
+
+- Node.js (v20 or higher)
+- npm (or Yarn)
+- Database : MySQL (using with Laragon)
+- Packages Installed
+    - @nestjs/config
+    - @nestjs/jwt
+    - @nestjs/typeorm
+    - typeorm
+    - mysql2
+    - zod (Object Schema Validation)
+
+## Setup Environment
+
+```bash
+# copy Environment Example to Environment project
+$ cp .env.example .env
+```
+
+## Create Database (MySQL)
+Create Database on Your Local Computer <br>
+You can see in the [.env](./.env) file
+```bash
+# DB_DATABASE=YOUR_DB_NAME
+```
 
 ## Installation
 
@@ -45,7 +86,27 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+## Migration
+
+```bash
+# running the migration
+$ npm run migration:run
+
+# show the list of migrations
+$ npm run migration:show
+
+# create new migration
+$ npm run migration:create --name=MigrationName
+
+# generate new migration
+$ npm run migration:generate --name=MigrationName
+
+# revert the migration
+$ npm run migration:revert
+```
+
+
+## Running the Unit Test
 
 ```bash
 # unit tests
@@ -64,10 +125,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Alvin Setiawan](https://bit.ly/alvinsetiawan-portfolio)
 
 ## License
-
 Nest is [MIT licensed](LICENSE).
