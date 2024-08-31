@@ -10,7 +10,7 @@ export default registerAs('databaseConfig', () => ({
   database: process.env.DB_DATABASE,
   autoLoadEntities: true,
   synchronize: process.env.NODE_ENV === 'development',
-  logging: process.env.NODE_ENV === 'development',
+  logging: false,
   // entities: [`${__dirname}/../**/*.entity{.ts,.js}`],
   migrations: [`${__dirname}/../database/migrations/*{.ts,.js}`],
   // migrationsTableName: 'migrations',
